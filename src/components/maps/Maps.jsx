@@ -60,5 +60,5 @@ export class Maps extends Component {
   }
 }
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyCdaNejjrX4_fdww2Z44VjxuYM0bylomCY", //"AIzaSyB3v88Ngg498KITLy6mvlGjXY8nz9CrV5Q",
+  apiKey: "",
 })(Maps);
