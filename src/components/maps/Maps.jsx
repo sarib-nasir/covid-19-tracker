@@ -48,9 +48,10 @@ export class Maps extends Component {
             visible={this.state.showingInfoWindow}
           >
             <div>
-              <p>total cases: {this.props.data.confirmed}</p>
-              <p>total recovered: {this.props.data.recovered}</p>
-              <p>total deaths: {this.props.data.deaths}</p>
+              <p>Total Cases: {this.props.data.confirmed}</p>
+              <p>Total Recovered: {this.props.data.recovered}</p>
+              <p>Total Deaths: {this.props.data.deaths}</p>
+              <p>Active Cases : {(this.props.data.confirmed)-((this.props.data.recovered)+(this.props.data.deaths))}</p>
             </div>
           </InfoWindow>
         </Map>
@@ -59,5 +60,5 @@ export class Maps extends Component {
   }
 }
 export default GoogleApiWrapper({
-  apiKey: "your_api_key",
+  apiKey: "AIzaSyCdaNejjrX4_fdww2Z44VjxuYM0bylomCY", //"AIzaSyB3v88Ngg498KITLy6mvlGjXY8nz9CrV5Q",
 })(Maps);

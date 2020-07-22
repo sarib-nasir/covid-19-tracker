@@ -39,6 +39,18 @@ export default function Cards({ data }) {
 
         <div className="card-footer bg-danger"></div>
       </div>
+      <div className="card border-danger">
+        <h4 className="text-capitalize pl-2 mt-2">Active Cases </h4>
+        <p className="mb-0 pl-2">{(data[data.length - 1].confirmed)-((data[data.length - 1].deaths)+(data[data.length - 1].recovered))}</p>
+        <small className="pl-2">
+          {" "}
+          {new Date(data[data.length - 1].date).toDateString()}
+        </small>
+
+        <strong className="pl-2">Total Deaths people from COVID-19</strong>
+
+        <div className="card-footer bg-warning"></div>
+      </div>
     </React.Fragment>
   );
 }

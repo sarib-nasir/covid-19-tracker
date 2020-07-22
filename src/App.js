@@ -24,6 +24,7 @@ class App extends Component {
   };
   render() {
     console.log(this.state.data[this.state.data.length - 1]);
+    console.log(this.state.latLng);
     return (
       <React.Fragment>
         <Navbar />
@@ -41,7 +42,7 @@ class App extends Component {
             <div className="col-sm-12 ">
               {this.state.country === "" ? (
                 <h5 className="text-center">
-                  map will be loadded when you will select a country
+                  map will be loaded when you will select a country
                 </h5>
               ) : (
                 <React.Fragment>

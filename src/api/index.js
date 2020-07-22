@@ -36,16 +36,10 @@ export const geoCodeApi = async (country) => {
     name = country;
   }
   const response = await axios.get(
-    "https://maps.googleapis.com/maps/api/geocode/json",
-    {
-      params: {
-        address: name,
-        key: "your_api_key",
-      },
-    }
+    `https://api.opencagedata.com/geocode/v1/json?q=${name}&key=78fa928ac40d468c8d87b1cd48cc971a`
   );
-  lat = response.data.results[0].geometry.location.lat;
-  lng = response.data.results[0].geometry.location.lng;
+  lat = response.data.results[0].geometry.lat;
+  lng = response.data.results[0].geometry.lng;
   return { lat, lng };
 };
 
