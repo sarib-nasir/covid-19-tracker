@@ -1,55 +1,50 @@
 import React from "react";
 import "../../App.css";
 
-export default function Cards({ data }) {
+export default function Cards({ data ,country}) {
   if (!data[0]) {
     return "loading...";
   }
-  // console.log(data[data.length - 1].confirmed);
+  console.log(country)
   return (
-    <React.Fragment>
-      <div className="card border-primary mb-3">
-        <h4 className="text-capitalize pl-2 mt-2">total cases </h4>
-        <p className="mb-0 pl-2">{data[data.length - 1].confirmed}</p>
-        <small className="pl-2">
-          {new Date(data[data.length - 1].date).toDateString()}
-        </small>
-        <strong className="pl-2">Total Infected people from COVID-19</strong>
-        <div className="card-footer bg-primary"></div>
-      </div>
-      <div className="card border-success mb-3">
-        <h4 className="text-capitalize pl-2 mt-2">total Recovered </h4>
-        <p className="mb-0 pl-2">{data[data.length - 1].recovered}</p>
-        <small className="pl-2">
-          {" "}
-          {new Date(data[data.length - 1].date).toDateString()}
-        </small>
-        <strong className="pl-2">Total Recovered people from COVID-19</strong>
-        <div className="card-footer bg-success"></div>
-      </div>
-      <div className="card border-danger">
-        <h4 className="text-capitalize pl-2 mt-2">total Deaths </h4>
-        <p className="mb-0 pl-2">{data[data.length - 1].deaths}</p>
-        <small className="pl-2">
-          {" "}
-          {new Date(data[data.length - 1].date).toDateString()}
-        </small>
-
-        <strong className="pl-2">Total Deaths people from COVID-19</strong>
-
-        <div className="card-footer bg-danger"></div>
-      </div>
-      <div className="card border-danger">
-        <h4 className="text-capitalize pl-2 mt-2">Active Cases </h4>
-        <p className="mb-0 pl-2">{(data[data.length - 1].confirmed)-((data[data.length - 1].deaths)+(data[data.length - 1].recovered))}</p>
-        <small className="pl-2">
-          {" "}
-          {new Date(data[data.length - 1].date).toDateString()}
-        </small>
-
-        <strong className="pl-2">Total Deaths people from COVID-19</strong>
-
-        <div className="card-footer bg-warning"></div>
+    <React.Fragment >
+      <div className="container">
+        <div className="row" style={{border:"1px solid #cbd5e0"}}>
+          <div className="col-sm-12 pt-3 pb-3">
+            <h5>{country ? `${country} Overview`: "Global Overview"} </h5>
+          </div>
+          <div className="card col-sm-3 mb-3  pb-2 text-center" >
+            <h3 className="mb-0 pl-2"  style={{color:"#7CB9E8"}}>{data[data.length - 1].confirmed}</h3>
+            <h6 className="text-capitalize pl-2 mt-2">confirmed </h6>
+            <small className="pl-2">
+              {new Date(data[data.length - 1].date).toDateString()}
+            </small>
+          </div>
+          <div className="card col-sm-3 mb-3  pb-2 text-center" >
+            <h3 className="mb-0 pl-2" style={{color:"#32de84"}}>{data[data.length - 1].recovered}</h3>
+            <h6 className="text-capitalize pl-2 mt-2">Recovered </h6>
+            <small className="pl-2">
+              {" "}
+              {new Date(data[data.length - 1].date).toDateString()}
+            </small>        
+          </div>
+          <div className="card col-sm-3 mb-3  pb-2 text-center" >
+            <h3 className="mb-0 pl-2" style={{color:"#fd5c63"}}>{data[data.length - 1].deaths}</h3>
+            <h6 className="text-capitalize pl-2 mt-2">Deaths</h6>
+            <small className="pl-2">
+              {" "}
+              {new Date(data[data.length - 1].date).toDateString()}
+            </small>
+          </div>
+          <div className="card col-sm-3 mb-3  pb-2 text-center" >
+            <h3 className="mb-0 pl-2" style={{color:"#FEBE10"}}>{(data[data.length - 1].confirmed)-((data[data.length - 1].deaths)+(data[data.length - 1].recovered))}</h3>
+            <h6 className="text-capitalize pl-2 mt-2">Active Cases </h6>
+            <small className="pl-2">
+              {" "}
+              {new Date(data[data.length - 1].date).toDateString()}
+            </small>
+          </div>
+        </div>
       </div>
     </React.Fragment>
   );
