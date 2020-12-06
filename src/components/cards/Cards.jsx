@@ -45,6 +45,25 @@ export default function Cards({ data ,country}) {
             </small>
           </div>
         </div>
+        {/* extra work */}
+        <div className="row mt-3" >            
+          <div className="card col mr-3 pb-3 pt-2 text-center" style={{border:"1px solid #cbd5e0"}}>
+            <h3 className="mb-0 pl-2" style={{color:"#fd5c63"}}>{(data[data.length - 1].deaths)-(data[data.length - 2].deaths)}</h3>
+            <h6 className="text-capitalize pl-2 mt-2">Deaths reported in one day</h6>
+            <small className="pl-2">
+              {" "}
+              {new Date(data[data.length - 1].date).toDateString()}
+            </small>
+          </div>
+          <div className="card col pb-3 pt-2 text-center" style={{border:"1px solid #cbd5e0"}}>
+            <h3 className="mb-0 pl-2" style={{color:"#FEBE10"}}>{(data[data.length - 1].confirmed)-(data[data.length - 2].confirmed)}</h3>
+            <h6 className="text-capitalize pl-2 mt-2">Cases Reported in One Day</h6>
+            <small className="pl-2">
+              {" "}
+              {new Date(data[data.length - 1].date).toDateString()}
+            </small>
+          </div>
+        </div>
       </div>
     </React.Fragment>
   );

@@ -15,7 +15,7 @@ export default function Rate({ data ,country}) {
       <div className="container mt-3">
         <div className="row" >
 
-          <div className="card col-sm-5 mb-3  pb-2 text-center" style={{border:"1px solid #cbd5e0"}}>
+          <div className="card col-sm-5 pb-2 text-center" style={{border:"1px solid #cbd5e0"}}>
             <div className={`progress-circle p${fatel}`} style={{position:'relative'}}>
               <span>{fatel}%</span>
               <div className="left-half-clipper">
@@ -28,7 +28,7 @@ export default function Rate({ data ,country}) {
               <h6 className="text-capitalize pl-2 mt-2">of Total Cases </h6>
             </div>
           </div>
-          <div className="card offset-sm-2 col-sm-5 mb-3  pb-2 text-center" style={{border:"1px solid #cbd5e0"}}>
+          <div className="card offset-sm-2 col-sm-5  pb-2 text-center" style={{border:"1px solid #cbd5e0"}}>
             <div className={recovery <= 0 ?  `progress-circle p${recovery}`:`progress-circle over50 p${recovery}` } style={{position:'relative'}}>
               <span>{recovery}%</span>
               <div className="left-half-clipper">
